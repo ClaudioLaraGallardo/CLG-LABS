@@ -1,0 +1,6 @@
+{
+  "name": "CLG Creative Studio",
+  "description": "Portafolio profesional de trabajos audiovisuales generados con Inteligencia Artificial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
