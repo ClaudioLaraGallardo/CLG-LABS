@@ -5,6 +5,7 @@ import HeroGallery from './components/HeroGallery';
 import logo from './assets/logo.png';
 
 const P_AUDIOVISUALES = [
+  { title: "Nuevo Video", desc: "SPOT OFICIAL 2026 TEMPORALES INTERNACIONALES DE PUERTO MONTT / CASA DEL ARTE DIEGO RIVERA", tags: ["Video"], youtubeId: "8KjyPN_Kl-A" },
   { title: "SUNDERER - THE BEHOLDER", desc: "Este video acompaña The Beholder, intro del demo de Sunderer.\n\nSunderer nace de riffs que tenía guardados hace años y que finalmente tomaron forma en este demo.\nLas influencias vienen directo del death y doom sueco, cruzadas con los primeros discos de Metallica.\n\nEl video fue desarrollado como un experimento visual, combinando procesos en GPT, Gemini y Runway, usando IA como herramienta creativa para construir atmósfera, relato y textura, no como fin en sí mismo.", tags: ["Death/Doom Metal", "Corto IA", "IA Creativa"], youtubeId: "dsFWzaBwMJY" },
   { title: "THRESHOLDS", desc: "Pieza sci-fi creada como excusa para investigar con algunos sintetizadores de la suite Arturia y Labs de Spitfire Audio.\n-Arp 2600 V3\n-Korg MS-20 V\n-Opia: bass synth bend\n-Astral forms: Guitar bowed drone\nEl video fue creado en su totalidad con Runway, esta vez quise hacerlo por completo, sin la ayuda de nano banana, tomando influencias del sci-fi ochentero y noventero junto con el trabajo de Villeneuve.", tags: ["Sci-Fi", "Sintetizadores", "Runway"], youtubeId: "nbvHqg3BrSQ" },
   { title: "PANTERA", desc: "Otro ejercicio, esta vez con la suite Labs de Spitifire.\nShamanic ritual.", tags: ["Ritual", "Shamanic", "Labs"], youtubeId: "ib492Y2BVhk" },
@@ -283,11 +284,14 @@ export default function App() {
                 
                 <div className="absolute inset-0 p-8 md:p-12 lg:p-16 flex flex-col justify-end pointer-events-none text-[#E2DFD8]">
                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-                     <div className="flex flex-col gap-3">
+                     <div className="flex flex-col gap-3 max-w-2xl">
                        <span className="font-mono text-xs md:text-sm tracking-widest text-[#E2DFD8]/60 uppercase">Único Destacado</span>
                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-medium uppercase tracking-tighter leading-none">
                          {P_AUDIOVISUALES[0].title}
                        </h2>
+                       <p className="text-[#E2DFD8]/80 text-sm md:text-base mt-2">
+                         {P_AUDIOVISUALES[0].desc}
+                       </p>
                      </div>
                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 hidden md:flex items-center justify-center backdrop-blur-md opacity-60 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-500 bg-white/10">
                         <Play fill="white" className="ml-1" size={28} />
