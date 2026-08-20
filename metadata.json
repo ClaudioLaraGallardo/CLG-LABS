@@ -1,6 +1,10 @@
 {
   "name": "CLG Creative Studio",
-  "description": "Portafolio profesional de trabajos audiovisuales generados con Inteligencia Artificial.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "description": "App de conexión de turistas con servicios locales y experiencias autóctonas en Pucón, Villarrica y Curarrehue.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

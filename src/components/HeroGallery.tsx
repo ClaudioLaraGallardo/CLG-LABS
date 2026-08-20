@@ -1,9 +1,22 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-const imageModules = import.meta.glob('../assets/images/*.{png,jpg,jpeg,webp}', { eager: true, import: 'default' }) as Record<string, string>;
-const GALLERY_IMAGES = Object.values(imageModules).sort();
+
+const GALLERY_IMAGES = [
+  "https://clg-labs.vercel.app/assets/5-BjgSMLsO.png",
+  "https://clg-labs.vercel.app/assets/5gel-BIZX0McC.png",
+  "https://clg-labs.vercel.app/assets/A_hyper-real_digital_photograph_captures_a_moss-co-WVyvwU1b.png",
+  "https://clg-labs.vercel.app/assets/Gemini_Generated_Image_jg7svjjg7svjjg7s-BX33eoPE.png",
+  "https://clg-labs.vercel.app/assets/Gemini_Generated_Image_leuz5sleuz5sleuz-DH-qTsX1.png",
+  "https://clg-labs.vercel.app/assets/Gemini_Generated_Image_nv9lr3nv9lr3nv9l-Dqbs8LIU.png",
+  "https://clg-labs.vercel.app/assets/Gemini_Generated_Image_tdkd4ytdkd4ytdkd-zYkxUjUh.png",
+  "https://clg-labs.vercel.app/assets/Nano_Banana_Pro_Ultra_wide_cinematic_shot_of_the_same_Chilean_altiplano_with_red_mineral_soil_and_vi_1-xMhW2P9m.png"
+];
+
+
+
+
 
 export default function HeroGallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -56,14 +69,14 @@ export default function HeroGallery() {
              className="flex-1 w-full min-h-[50vh] relative isolate group overflow-hidden md:cursor-none flex items-center justify-center bg-[#111111]/5 border border-grid/50" 
              onClick={handleNext}
           >
-             <AnimatePresence mode="popLayout" initial={false}>
+             
                {mainImage ? (
                  <motion.img 
                     key={mainImage}
                     src={mainImage} 
                     initial={{ opacity: 0, scale: 0.98 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 1.02 }}
+                    
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     className="absolute inset-0 w-full h-full object-cover" 
                     alt={`Artwork ${currentIndex + 1}`} 
@@ -71,7 +84,7 @@ export default function HeroGallery() {
                ) : (
                  <div className="flex items-center justify-center w-full h-full text-xs font-mono uppercase opacity-50">Esperando imágenes...</div>
                )}
-             </AnimatePresence>
+             
              {/* Hover instructions */}
              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/5 pointer-events-none">
                 <span className="font-mono text-[10px] uppercase tracking-widest backdrop-blur-md bg-white/80 text-[#111111] px-4 py-2 border border-black/10 rounded-full shadow-lg">Siguiente Imágen</span>

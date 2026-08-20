@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Play, X, ArrowUpRight, ArrowRight, MousePointer2 } from 'lucide-react';
+import { Play, X, Plus, ArrowUpRight, ArrowRight, MousePointer2 } from 'lucide-react';
 import HeroGallery from './components/HeroGallery';
-import logo from './assets/logo.png';
+
 
 const P_AUDIOVISUALES = [
-  { title: "Nuevo Video", desc: "SPOT OFICIAL 2026 TEMPORALES INTERNACIONALES DE PUERTO MONTT / CASA DEL ARTE DIEGO RIVERA", tags: ["Video"], youtubeId: "8KjyPN_Kl-A" },
+  { title: "Nuevo Video- Ejercicio Para Marcas", desc: "Nuevo video agregado.", tags: ["Video"], youtubeId: "861SstK8q9U" },
+  { title: "Temporales Teatrales Puerto Montt 2026", desc: "SPOT OFICIAL 2026 TEMPORALES INTERNACIONALES DE PUERTO MONTT / CASA DEL ARTE DIEGO RIVERA", tags: ["Video"], youtubeId: "8KjyPN_Kl-A" },
   { title: "SUNDERER - THE BEHOLDER", desc: "Este video acompaña The Beholder, intro del demo de Sunderer.\n\nSunderer nace de riffs que tenía guardados hace años y que finalmente tomaron forma en este demo.\nLas influencias vienen directo del death y doom sueco, cruzadas con los primeros discos de Metallica.\n\nEl video fue desarrollado como un experimento visual, combinando procesos en GPT, Gemini y Runway, usando IA como herramienta creativa para construir atmósfera, relato y textura, no como fin en sí mismo.", tags: ["Death/Doom Metal", "Corto IA", "IA Creativa"], youtubeId: "dsFWzaBwMJY" },
   { title: "THRESHOLDS", desc: "Pieza sci-fi creada como excusa para investigar con algunos sintetizadores de la suite Arturia y Labs de Spitfire Audio.\n-Arp 2600 V3\n-Korg MS-20 V\n-Opia: bass synth bend\n-Astral forms: Guitar bowed drone\nEl video fue creado en su totalidad con Runway, esta vez quise hacerlo por completo, sin la ayuda de nano banana, tomando influencias del sci-fi ochentero y noventero junto con el trabajo de Villeneuve.", tags: ["Sci-Fi", "Sintetizadores", "Runway"], youtubeId: "nbvHqg3BrSQ" },
   { title: "PANTERA", desc: "Otro ejercicio, esta vez con la suite Labs de Spitifire.\nShamanic ritual.", tags: ["Ritual", "Shamanic", "Labs"], youtubeId: "ib492Y2BVhk" },
@@ -52,6 +53,22 @@ const ALL_PROJECTS = [
 ];
 
 export default function App() {
+  const [projects, setProjects] = useState(ALL_PROJECTS);
+  const [isAddingVideo, setIsAddingVideo] = useState(false);
+  const [newVideo, setNewVideo] = useState({ title: "", desc: "", category: "Proyectos Audiovisuales", youtubeId: "" });
+
+  const handleAddVideo = (e: React.FormEvent) => {
+    e.preventDefault();
+    let videoId = newVideo.youtubeId;
+    if (videoId.includes("v=")) videoId = videoId.split("v=")[1].split("&")[0];
+    else if (videoId.includes("youtu.be/")) videoId = videoId.split("youtu.be/")[1].split("?")[0];
+    
+    const newProj = { title: newVideo.title, desc: newVideo.desc, tags: ["Nuevo"], youtubeId: videoId };
+    setProjects(projects.map(p => p.section === newVideo.category ? { ...p, items: [newProj, ...p.items] } : p) as any);
+    setIsAddingVideo(false);
+    setNewVideo({ title: "", desc: "", category: "Proyectos Audiovisuales", youtubeId: "" });
+  };
+
   const [activeVideo, setActiveVideo] = useState<{title: string, url?: string, youtubeId?: string | string[], externalUrl?: string} | null>(null);
   const [activeSubIndex, setActiveSubIndex] = useState(0);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -174,7 +191,78 @@ export default function App() {
         </motion.div>
       )}
       </AnimatePresence>
-      
+
+      <AnimatePresence>
+      {isAddingVideo && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4"
+        >
+          <div className="w-full max-w-lg bg-[#111111] p-8 border border-white/20 shadow-2xl relative">
+            <button 
+              onClick={() => setIsAddingVideo(false)}
+              className="absolute top-4 right-4 text-white hover:opacity-70 transition-opacity"
+            >
+              <X size={20} />
+            </button>
+            <h2 className="text-white text-2xl font-serif italic mb-6">Subir Video Nuevo</h2>
+            <form onSubmit={handleAddVideo} className="flex flex-col gap-4 text-[#E2DFD8]">
+              <div>
+                <label className="text-xs uppercase tracking-widest opacity-60 mb-1 block">Categoría</label>
+                <select 
+                  value={newVideo.category}
+                  onChange={e => setNewVideo({...newVideo, category: e.target.value})}
+                  className="w-full bg-black border border-white/20 p-2 text-sm focus:border-[#FF5A00] outline-none"
+                >
+                  {projects.map(p => <option key={p.section} value={p.section}>{p.section}</option>)}
+                </select>
+              </div>
+              <div>
+                <label className="text-xs uppercase tracking-widest opacity-60 mb-1 block">Título</label>
+                <input 
+                  type="text" 
+                  required
+                  value={newVideo.title}
+                  onChange={e => setNewVideo({...newVideo, title: e.target.value})}
+                  className="w-full bg-black border border-white/20 p-2 text-sm focus:border-[#FF5A00] outline-none"
+                  placeholder="Ej: Nuevo Documental"
+                />
+              </div>
+              <div>
+                <label className="text-xs uppercase tracking-widest opacity-60 mb-1 block">Link YouTube</label>
+                <input 
+                  type="text" 
+                  required
+                  value={newVideo.youtubeId}
+                  onChange={e => setNewVideo({...newVideo, youtubeId: e.target.value})}
+                  className="w-full bg-black border border-white/20 p-2 text-sm focus:border-[#FF5A00] outline-none"
+                  placeholder="Ej: https://youtube.com/watch?v=..."
+                />
+              </div>
+              <div>
+                <label className="text-xs uppercase tracking-widest opacity-60 mb-1 block">Descripción</label>
+                <textarea 
+                  rows={3}
+                  value={newVideo.desc}
+                  onChange={e => setNewVideo({...newVideo, desc: e.target.value})}
+                  className="w-full bg-black border border-white/20 p-2 text-sm focus:border-[#FF5A00] outline-none resize-none"
+                  placeholder="Breve descripción..."
+                />
+              </div>
+              <button 
+                type="submit"
+                className="mt-4 w-full bg-[#FF5A00] text-black font-bold uppercase tracking-widest text-sm p-3 hover:bg-[#E62E00] transition-colors"
+              >
+                Agregar Proyecto
+              </button>
+            </form>
+          </div>
+        </motion.div>
+      )}
+      </AnimatePresence>
+
       {/* Top Navbar */}
       <nav className="flex justify-between items-center text-[10px] sm:text-xs font-semibold uppercase tracking-widest px-4 py-3 border-b border-grid sticky top-0 bg-[#E2DFD8] z-50">
          <div className="flex gap-4 sm:gap-8 origin-left w-1/3">
@@ -204,32 +292,15 @@ export default function App() {
           <span>Studio ©{new Date().getFullYear()}</span>
         </div>
 
-        {/* Huge Typo Hero Section */}
-        <section className="relative border-b border-grid overflow-hidden">
-          {/* Fondo base */}
-          <div className="absolute inset-0 bg-transparent -z-30 pointer-events-none" />
-          
-          {/* Spinning Orange/Yellow Halos */}
-          <div className="absolute top-[30%] left-[60%] -translate-x-1/2 -translate-y-1/2 w-[150vw] md:w-[80vw] max-w-[1200px] aspect-square bg-gradient-to-r from-[#FFCC00] via-[#FF5A00] to-[transparent] rounded-full blur-[80px] md:blur-[140px] animate-[spin_20s_linear_infinite] opacity-80 -z-20 pointer-events-none" style={{ transformOrigin: 'calc(50% + 10%) calc(50% + 5%)' }} />
-          <div className="absolute bottom-[-10%] left-[-10%] w-[120vw] md:w-[60vw] max-w-[1000px] aspect-square bg-gradient-to-l from-[#FF5A00] via-[#E62E00] to-[transparent] rounded-full blur-[60px] md:blur-[120px] animate-[spin_25s_linear_infinite_reverse] opacity-60 -z-20 pointer-events-none" style={{ transformOrigin: 'calc(50% - 15%) calc(50% - 10%)' }} />
-          
-          {/* Cristal Acrílico Layer */}
-          <div className="absolute inset-0 bg-[#FF5A00]/5 backdrop-blur-[60px] shadow-[inset_0_4px_40px_rgba(255,255,255,0.3),inset_0_0_80px_rgba(255,90,0,0.2)] -z-10 pointer-events-none" />
-
-          {/* Main Title Background layer */}
-          <div className="relative z-10 w-full">
-             <motion.div 
-                initial={{ y: 50, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full h-fit md:h-[80vh]"
-              >
+                        {/* Hero Section */}
+        <section className="relative w-full h-[60vh] md:h-[80vh] min-h-[500px] border-b border-grid overflow-hidden bg-[#E2DFD8]">
+          {/* Main Hero Background Logo */}
+          <div className="absolute inset-0 z-0">
                <img 
-                 src={logo}
-                 alt="CLG LABS" 
-                 className="w-full h-full object-cover mix-blend-multiply opacity-90 pointer-events-none select-none" 
+                 src="https://clg-labs.vercel.app/assets/logo-ChwMm5Gx.png"
+                 alt="CLG LABS"
+                 className="w-full h-full object-cover pointer-events-none select-none"
                />
-             </motion.div>
           </div>
 
           {/* Subtitle / Subheading */}
@@ -238,13 +309,13 @@ export default function App() {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="text-[6vw] sm:text-[4.5vw] md:text-[3.5vw] leading-[0.9] tracking-tighter font-semibold font-display text-white drop-shadow-lg uppercase max-w-5xl mix-blend-difference"
+                className="text-[6vw] sm:text-[4.5vw] md:text-[3.5vw] leading-[0.9] tracking-tighter font-semibold font-display text-white drop-shadow-lg uppercase max-w-5xl"
               >
                 Portafolio audiovisual<br className="md:hidden" /> & experimentación <span className="font-serif italic text-white/90">IA.</span>
              </motion.h2>
           </div>
         </section>
-
+        
         <HeroGallery />
 
          {/* Introduction / About */}
@@ -355,7 +426,7 @@ export default function App() {
                                  </div>
                              </div>
                              
-                             <div className="opacity-0 max-h-0 group-hover/item:opacity-100 group-hover/item:max-h-64 overflow-hidden transition-all duration-500 ease-in-out md:hidden lg:block group-hover/item:mb-8">
+                             <div className="opacity-0 max-h-0 group-hover/item:opacity-100 group-hover/item:max-h-[500px] overflow-hidden transition-all duration-500 ease-in-out group-hover/item:mb-8">
                                <p className="opacity-80 md:w-[90%] leading-relaxed text-sm font-sans whitespace-pre-wrap pl-4 border-l border-[#111111]/40 text-[#111111]">
                                  {item.desc}
                                </p>
