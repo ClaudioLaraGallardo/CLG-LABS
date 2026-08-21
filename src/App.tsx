@@ -7,7 +7,7 @@ import { logo } from "./assets/encodedImages";
 
 
 const P_AUDIOVISUALES = [
-  { title: "Nuevo Video 2 - Ejercicio Para Marcas", desc: "Otro nuevo video agregado.", tags: ["Video"], youtubeId: "UEUQVg-ppYI" },
+  { title: "Diseño visual para una marca deportiva outdoor", desc: "Movimiento, territorio y rendimiento en una misma identidad.", tags: ["Video"], youtubeId: "UEUQVg-ppYI" },
   { title: "Nuevo Video- Ejercicio Para Marcas", desc: "Nuevo video agregado.", tags: ["Video"], youtubeId: "861SstK8q9U" },
   { title: "TouchDesigner", desc: "De SDXL a SD1.5 + LCM: la migración necesaria para que ControlNet reconociera manos y dedos en tiempo real. Después de muchas horas de debugging —engines de TensorRT, step schedules, feedback loops y varios ajustes más— encontramos el equilibrio entre estabilidad y libertad creativa.\n\nLa cámara interpreta tu movimiento con MediaPipe y StreamDiffusion lo transforma en tiempo real. Acá, dos variantes del mismo sistema:\n\n-Biomecánico: cráneo alargado, manos venosas y una estética inspirada en H.R. Giger.", tags: ["TouchDesigner", "ControlNet", "StreamDiffusion"], youtubeId: "vcqQJSAD3Xc" },
   { title: "Temporales Teatrales Puerto Montt 2026", desc: "SPOT OFICIAL 2026 TEMPORALES INTERNACIONALES DE PUERTO MONTT / CASA DEL ARTE DIEGO RIVERA", tags: ["Video"], youtubeId: "8KjyPN_Kl-A" },
