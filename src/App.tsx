@@ -301,7 +301,7 @@ export default function App() {
           {/* Main Hero Background Logo */}
           <div className="absolute inset-0 z-0">
                <img 
-                 src="/assets/images/logo.png"
+                 src="/assets/images/logo.png?v=2"
                  alt="CLG LABS"
                  className="w-full h-full object-cover pointer-events-none select-none"
                />
