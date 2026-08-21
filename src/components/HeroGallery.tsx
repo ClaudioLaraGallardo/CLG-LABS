@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { 
+  gallery_1, 
+  gallery_2, 
+  gallery_3, 
+  gallery_4, 
+  Gemini_Generated_Image_leuz5sleuz5sleuz, 
+  Gemini_Generated_Image_tdkd4ytdkd4ytdkd, 
+  Nano_Banana_Pro_Ultra_wide_cinematic_shot_of_the_same_Chilean_altiplano_with_red_mineral_soil_and_vi_3 
+} from '../assets/encodedImages';
 
 const GALLERY_IMAGES = [
-  "/assets/images/gallery_1.png?v=2",
-  "/assets/images/gallery_2.png?v=2",
-  "/assets/images/gallery_3.png?v=2",
-  "/assets/images/gallery_4.png?v=2",
-  "/assets/images/Gemini_Generated_Image_leuz5sleuz5sleuz.png",
-  "/assets/images/Gemini_Generated_Image_tdkd4ytdkd4ytdkd.png",
-  "/assets/images/Nano_Banana_Pro_Ultra_wide_cinematic_shot_of_the_same_Chilean_altiplano_with_red_mineral_soil_and_vi_3.png"
+  gallery_1,
+  gallery_2,
+  gallery_3,
+  gallery_4,
+  Gemini_Generated_Image_leuz5sleuz5sleuz,
+  Gemini_Generated_Image_tdkd4ytdkd4ytdkd,
+  Nano_Banana_Pro_Ultra_wide_cinematic_shot_of_the_same_Chilean_altiplano_with_red_mineral_soil_and_vi_3
 ];
 
 

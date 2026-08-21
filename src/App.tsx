@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Play, X, Plus, ArrowUpRight, ArrowRight, MousePointer2 } from 'lucide-react';
 import HeroGallery from './components/HeroGallery';
+import { logo } from "./assets/encodedImages";
 
 
 const P_AUDIOVISUALES = [
@@ -301,7 +302,7 @@ export default function App() {
           {/* Main Hero Background Logo */}
           <div className="absolute inset-0 z-0">
                <img 
-                 src="/assets/images/logo.png?v=2"
+                 src={logo}
                  alt="CLG LABS"
                  className="w-full h-full object-cover pointer-events-none select-none"
                />
