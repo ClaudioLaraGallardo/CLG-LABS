@@ -3,10 +3,10 @@ import { motion } from 'motion/react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const GALLERY_IMAGES = [
-  "/assets/images/ChatGPT Image 21 ago 2026, 11_01_28 a.m..png",
-  "/assets/images/ChatGPT Image 21 ago 2026, 11_01_38 a.m..png",
-  "/assets/images/ChatGPT Image 21 ago 2026, 11_02_14 a.m..png",
-  "/assets/images/ChatGPT Image 21 ago 2026, 11_02_54 a.m..png",
+  "/assets/images/gallery_1.png",
+  "/assets/images/gallery_2.png",
+  "/assets/images/gallery_3.png",
+  "/assets/images/gallery_4.png",
   "/assets/images/Gemini_Generated_Image_leuz5sleuz5sleuz.png",
   "/assets/images/Gemini_Generated_Image_tdkd4ytdkd4ytdkd.png",
   "/assets/images/Nano_Banana_Pro_Ultra_wide_cinematic_shot_of_the_same_Chilean_altiplano_with_red_mineral_soil_and_vi_3.png"
