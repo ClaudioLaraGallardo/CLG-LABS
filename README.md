@@ -1,19 +1,20 @@
-# Pucón en miniatura
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
+</div>
 
-Pucón, Chile, como un pequeño planeta 3D interactivo: volcán Villarrica, lago, calles reales de OpenStreetMap, museos, cafés, comida, excursiones y servicios. Modo noche y versión en inglés.
+# Run and deploy your AI Studio app
 
-Prototipo de **CLG-LABS**. Inspirado en [Turigoza](https://github.com/javierbalvin-zgz/turigoza), de Javier Balvín.
+This contains everything you need to run your app locally.
 
-## Archivos
+View your app in AI Studio: https://ai.studio/apps/a7016c13-0b86-4f39-9b65-f9f2d175ae41
 
-- `index.html`: la app completa (Three.js desde CDN, fotos incrustadas).
-- `favicon.svg`: ícono.
-- `vercel.json`: configuración de Vercel.
+## Run Locally
 
-Es un sitio estático, sin build. En Vercel: **Add New → Project**, importa este repositorio, Framework Preset **Other**, y **Deploy**.
+**Prerequisites:**  Node.js
 
-## Créditos
 
-- Mapa y calles © colaboradores de OpenStreetMap (ODbL).
-- Fotos de Wikimedia Commons; autor y licencia en cada ficha.
-- Fotos del CRTIC Pucón: CRTIC.
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
