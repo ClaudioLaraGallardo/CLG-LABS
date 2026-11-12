@@ -59,6 +59,13 @@ const P_INTERACTIVO = [
     thumb: "/assets/images/lo_que_queda_2036.jpg"
   },
   {
+    title: "Pucón en miniatura",
+    desc: "Pucón cabe en tu mano.\n\nUn pequeño planeta 3D para recorrer la ciudad y sus alrededores: el volcán Rukapillan con su fumarola, el lago, la península, el río Trancura, los Ojos del Caburgua, Huerquehue y las Termas Geométricas. Las calles y la costa salen de datos reales de OpenStreetMap, y sobre ellas aparecen más de 50 lugares útiles —cafés, comida, bares, excursiones y servicios— con su dirección y cómo llegar.\n\nCada parada tiene una ficha con fotos e historia: la Casa Museo Padre Pancho, el Museo de la Pesca de los boteros, CIVUR 39° y la sede sur de CRTIC. Al caer la noche se encienden las ventanas y el cráter brilla rojo sobre la nieve.\n\nHecho en Three.js, con una estética orgánica de fibras y burbujas. Funciona en el navegador, en español e inglés. Inspirado en Turigoza, de Javier Balvín: pucon-3d.vercel.app",
+    tags: ["Three.js", "WebGL", "Visualización 3D", "OpenStreetMap", "Pucón"],
+    externalUrl: "https://pucon-3d.vercel.app",
+    thumb: "/assets/images/pucon_3d.jpg"
+  },
+  {
     title: "Mapa Micológico Araucanía", 
     desc: "Una visualización 3D interactiva de los hongos de la Región.\n\nCada hongo es una observación real georeferenciada, con datos en vivo de GBIF e iNaturalist. Desde el Digüeñe sagrado hasta el Loyo en peligro de extinción — 85 especies distribuidas sobre un mapa 3D de volcanes, lagos y bosques de La Araucanía.\n\nIncluye nombres en mapuzungún, temporadas de fructificación, fotos reales y referencias etnomicológicas del Pueblo Mapuche.", 
     tags: ["Visualización 3D", "Interactivo", "Región de La Araucanía", "Desarrollo Web"], 
