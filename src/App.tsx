@@ -36,7 +36,14 @@ const P_INVESTIGACION = [
 ];
 
 const P_INTERACTIVO = [
-  { 
+  {
+    title: "LO QUE QUEDA · 2036",
+    desc: "¿Qué lugar estás dejando?\n\nInstalación interactiva en tiempo real. Te paras frente a un reflejo y tu cuerpo se vuelve un esqueleto de luz, rodeado de siete lugares de Pucón: el volcán Rukapillan, el lago Mallolafken, el río Trancura, el humedal, Huerquehue, Caburgua y Quelhue. Si sostienes la mano sobre uno, el año avanza a 2036 y el lugar llena la pantalla en relieve satelital, como podría estar si seguimos así. Con las dos manos arriba dibujas tus iniciales en el aire, y tu firma queda orbitando ese lugar para quien venga después.\n\nDesarrollada en TouchDesigner, con MediaPipe para leer el cuerpo sin sensores y datos abiertos: imágenes Sentinel-2, elevación real del terreno, especies amenazadas y alertas del volcán.\n\nNació de lo que vivió Pucón en 2026: un lago declarado zona saturada, ríos que obligaron a evacuar y un humedal bajo presión. Al salir, un QR entrega una guía con lo que podemos hacer hoy: lo-que-queda-2036.vercel.app",
+    tags: ["TouchDesigner", "MediaPipe", "Instalación Interactiva", "Datos Satelitales", "Pucón"],
+    url: "/assets/video/lo_que_queda_2036.mp4",
+    thumb: "/assets/images/lo_que_queda_2036.jpg"
+  },
+  {
     title: "Mapa Micológico Araucanía", 
     desc: "Una visualización 3D interactiva de los hongos de la Región.\n\nCada hongo es una observación real georeferenciada, con datos en vivo de GBIF e iNaturalist. Desde el Digüeñe sagrado hasta el Loyo en peligro de extinción — 85 especies distribuidas sobre un mapa 3D de volcanes, lagos y bosques de La Araucanía.\n\nIncluye nombres en mapuzungún, temporadas de fructificación, fotos reales y referencias etnomicológicas del Pueblo Mapuche.", 
     tags: ["Visualización 3D", "Interactivo", "Región de La Araucanía", "Desarrollo Web"], 
@@ -458,7 +465,7 @@ export default function App() {
                              {((item as any).youtubeId || (item as any).url || (item as any).externalUrl) && (
                                <div className="w-full sm:w-56 xl:w-72 aspect-[16/9] bg-[#111111] overflow-hidden relative rounded-sm shadow-sm group-hover/item:shadow-xl transition-all duration-500 ring-1 ring-black/5 group-hover/item:ring-[#111111]/20 group-hover/item:-translate-y-2 group-hover/item:-translate-x-2">
                                  <img 
-                                   src={(item as any).youtubeId ? `https://img.youtube.com/vi/${Array.isArray((item as any).youtubeId) ? (item as any).youtubeId[0] : (item as any).youtubeId}/hqdefault.jpg` : "https://images.unsplash.com/photo-1542289420-1a73cbde90cb?q=80&w=800&auto=format&fit=crop"} 
+                                   src={(item as any).thumb ? (item as any).thumb : (item as any).youtubeId ?`https://img.youtube.com/vi/${Array.isArray((item as any).youtubeId) ? (item as any).youtubeId[0] : (item as any).youtubeId}/hqdefault.jpg` : "https://images.unsplash.com/photo-1542289420-1a73cbde90cb?q=80&w=800&auto=format&fit=crop"} 
                                    alt={item.title}
                                    className="w-full h-full object-cover grayscale opacity-30 group-hover/item:grayscale-0 group-hover/item:opacity-100 transition-all duration-700 ease-out group-hover/item:scale-105"
                                  />
