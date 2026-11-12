@@ -9,7 +9,6 @@ import { logo } from "./assets/encodedImages";
 const P_AUDIOVISUALES = [
   { title: "Diseño visual para una marca deportiva outdoor", desc: "Movimiento, territorio y rendimiento en una misma identidad.", tags: ["Video"], youtubeId: "UEUQVg-ppYI" },
   { title: "Nuevo Video- Ejercicio Para Marcas", desc: "Nuevo video agregado.", tags: ["Video"], youtubeId: "861SstK8q9U" },
-  { title: "TouchDesigner", desc: "De SDXL a SD1.5 + LCM: la migración necesaria para que ControlNet reconociera manos y dedos en tiempo real. Después de muchas horas de debugging —engines de TensorRT, step schedules, feedback loops y varios ajustes más— encontramos el equilibrio entre estabilidad y libertad creativa.\n\nLa cámara interpreta tu movimiento con MediaPipe y StreamDiffusion lo transforma en tiempo real. Acá, dos variantes del mismo sistema:\n\n-Biomecánico: cráneo alargado, manos venosas y una estética inspirada en H.R. Giger.", tags: ["TouchDesigner", "ControlNet", "StreamDiffusion"], youtubeId: "vcqQJSAD3Xc" },
   { title: "Temporales Teatrales Puerto Montt 2026", desc: "SPOT OFICIAL 2026 TEMPORALES INTERNACIONALES DE PUERTO MONTT / CASA DEL ARTE DIEGO RIVERA", tags: ["Video"], youtubeId: "8KjyPN_Kl-A" },
   { title: "SUNDERER - THE BEHOLDER", desc: "Este video acompaña The Beholder, intro del demo de Sunderer.\n\nSunderer nace de riffs que tenía guardados hace años y que finalmente tomaron forma en este demo.\nLas influencias vienen directo del death y doom sueco, cruzadas con los primeros discos de Metallica.\n\nEl video fue desarrollado como un experimento visual, combinando procesos en GPT, Gemini y Runway, usando IA como herramienta creativa para construir atmósfera, relato y textura, no como fin en sí mismo.", tags: ["Death/Doom Metal", "Corto IA", "IA Creativa"], youtubeId: "dsFWzaBwMJY" },
   { title: "THRESHOLDS", desc: "Pieza sci-fi creada como excusa para investigar con algunos sintetizadores de la suite Arturia y Labs de Spitfire Audio.\n-Arp 2600 V3\n-Korg MS-20 V\n-Opia: bass synth bend\n-Astral forms: Guitar bowed drone\nEl video fue creado en su totalidad con Runway, esta vez quise hacerlo por completo, sin la ayuda de nano banana, tomando influencias del sci-fi ochentero y noventero junto con el trabajo de Villeneuve.", tags: ["Sci-Fi", "Sintetizadores", "Runway"], youtubeId: "nbvHqg3BrSQ" },
@@ -21,6 +20,13 @@ const P_AUDIOVISUALES = [
   { title: "Festival Reino Fungi 2026", desc: "Serie de piezas audiovisuales creadas para el Festival Reino Fungi 2026.", tags: ["Festival", "Reino Fungi", "Audiovisual"], youtubeId: ["8c63J72L63k", "c6-evQzGNRc", "IYebp1-3ERg", "F_b_JvZUtIg"] },
   { title: "Jellyfied Forest", desc: "Secuencia audiovisual sobre un ecosistema de bosque gelatinificado.", tags: ["Bosque", "Gelatina", "Fluidez"], youtubeId: ["XgMbQbmBCfs", "tPjJn5GoZT8", "eaeokKjx2Yk"] },
   { title: "CRTQUIN", desc: "El video se desarrolló como una experiencia inmersiva en primera persona, articulando territorio y tecnología desde CRTIC Lab Pucón. 🗻\n\nEl proceso comenzó con la creación de prompts narrativos y visuales en ChatGPT 5.2, enfocados en el cruce entre el paisaje local (bosque y volcán) y capas digitales. Estos prompts fueron implementados en Runway (Image to Video), a partir de imágenes de referencia y un proceso reiterativo de ajustes para definir movimiento, ritmo y atmósfera.\n\nTodo el material visual fue generado mediante inteligencia artificial. La música es el único elemento no creado con IA, fue compuesta, grabada y mezclada íntegramente por @claudiolaragallardo, autor de toda la pieza.\n\nEl resultado es una obra que impregna territorialidad del sur de Chile en una experiencia tecnocreativa, integrando naturaleza, realidad virtual y experimentación de laboratorio.", tags: ["CRTIC", "Runway AI", "Inmersivo"], youtubeId: "IA5lCbnYhq8" },
+];
+
+const P_TOUCHDESIGNER = [
+  { title: "Carpintero", desc: "Aves del Sur de Chile · pieza 2.\n\nUn tronco escaneado con Gaussian Splatting que responde en tiempo real al canto del carpintero negro (rere).\n\nVisuales en TouchDesigner, música original.", tags: ["TouchDesigner", "Gaussian Splatting", "Audiorreactivo", "Aves del Sur"], youtubeId: "T3FcsGlxQ18" },
+  { title: "Chucao", desc: "Aves del Sur de Chile · pieza 1.\n\nUna tela de micelio y musgo que reacciona en tiempo real a mi tema Chucao Drone, donde se cruzan el canto del chucao, ave del bosque templado del sur de Chile, con sintetizadores.\n\nCada sonido deja su huella en la tela: el canto del chucao enciende hebras rojas, los bajos aceleran su flujo y la armonía aguda abre un anillo de luz por cada nota.\n\nMúsica y visuales: Claudio Lara. Hecho en TouchDesigner, GLSL y audio en tiempo real.", tags: ["TouchDesigner", "GLSL", "Audiorreactivo", "Aves del Sur"], youtubeId: "hqw-mtzuKpA" },
+  { title: "Cromo Void 360", desc: "Versión VR.\n\nUna esfera de seda plateada con espinas que crece, te envuelve y te atraviesa, al ritmo de NG1, mi tema original.\n\nHecho en TouchDesigner con shaders GLSL, renderizado en 360° a 4K y 60 fps, y probado en Meta Quest.", tags: ["TouchDesigner", "GLSL", "VR 360°", "Meta Quest"], youtubeId: "s8czeGna9G4" },
+  { title: "StreamDiffusion en tiempo real", desc: "De SDXL a SD1.5 + LCM: la migración necesaria para que ControlNet reconociera manos y dedos en tiempo real. Después de muchas horas de debugging —engines de TensorRT, step schedules, feedback loops y varios ajustes más— encontramos el equilibrio entre estabilidad y libertad creativa.\n\nLa cámara interpreta tu movimiento con MediaPipe y StreamDiffusion lo transforma en tiempo real. Acá, dos variantes del mismo sistema:\n\n-Biomecánico: cráneo alargado, manos venosas y una estética inspirada en H.R. Giger.", tags: ["TouchDesigner", "ControlNet", "StreamDiffusion", "MediaPipe"], youtubeId: "vcqQJSAD3Xc" },
 ];
 
 const P_STOPMOTION = [
@@ -55,11 +61,17 @@ const LINEAS_INV = [
   "Inteligencia Artificial Generativa", "Naturaleza y territorio", "Bosques templados lluviosos", "Cultura del sur de Chile", "Micología", "Misticismo y ciencia ficción", "Cine experimental", "Stop motion digital", "Producción virtual", "Narrativas inmersivas", "Música y audiovisual", "Memoria y paisaje", "Futurismo ecológico", "Arte tecnocreativo"
 ];
 
+const DESTACADO = {
+  ...P_INTERACTIVO[0],
+  lead: "¿Qué lugar estás dejando? Instalación interactiva en tiempo real, hecha en TouchDesigner: tu cuerpo se vuelve luz entre siete lugares de Pucón y, al tocar uno, lo ves como podría estar en 2036."
+};
+
 const ALL_PROJECTS = [
+  { section: 'Medios Interactivos', items: P_INTERACTIVO },
+  { section: 'Touch­Designer', items: P_TOUCHDESIGNER },
   { section: 'Proyectos Audiovisuales', items: P_AUDIOVISUALES },
   { section: 'Stop Motion Digital', items: P_STOPMOTION },
   { section: 'Animación & Fantasía', items: P_ANIMACION },
-  { section: 'Medios Interactivos', items: P_INTERACTIVO },
   { section: 'Investigación CRTIC', items: P_INVESTIGACION }
 ];
 
@@ -361,9 +373,9 @@ export default function App() {
             
             <motion.div 
               className="flex-1 relative overflow-hidden group md:cursor-none bg-zinc-900 aspect-video lg:aspect-auto"
-              onClick={() => handleOpenVideo({ title: P_AUDIOVISUALES[0].title, youtubeId: P_AUDIOVISUALES[0].youtubeId as string })}
+              onClick={() => handleOpenVideo({ title: DESTACADO.title, url: DESTACADO.url })}
             >
-                <img src={`https://img.youtube.com/vi/${P_AUDIOVISUALES[0].youtubeId}/maxresdefault.jpg`} className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)]" alt="Sunderer - The Beholder" />
+                <img src="/assets/images/lo_que_queda_2036_destacado.jpg" className="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)]" alt="LO QUE QUEDA · 2036: visitante convertido en esqueleto de luz frente al reflejo" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90 group-hover:opacity-60 transition-opacity duration-700" />
                 
                 <div className="absolute inset-0 p-8 md:p-12 lg:p-16 flex flex-col justify-end pointer-events-none text-[#E2DFD8]">
@@ -371,10 +383,10 @@ export default function App() {
                      <div className="flex flex-col gap-3 max-w-2xl">
                        <span className="font-mono text-xs md:text-sm tracking-widest text-[#E2DFD8]/60 uppercase">Único Destacado</span>
                        <h2 className="text-4xl md:text-6xl lg:text-7xl font-display font-medium uppercase tracking-tighter leading-none">
-                         {P_AUDIOVISUALES[0].title}
+                         {DESTACADO.title}
                        </h2>
                        <p className="text-[#E2DFD8]/80 text-sm md:text-base mt-2">
-                         {P_AUDIOVISUALES[0].desc}
+                         {DESTACADO.lead}
                        </p>
                      </div>
                      <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 hidden md:flex items-center justify-center backdrop-blur-md opacity-60 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-500 bg-white/10">
